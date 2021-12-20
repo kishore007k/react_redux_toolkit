@@ -8,6 +8,7 @@
 body {
   margin: 0;
   font-family: Arial;
+  background-color: rgb(32, 32, 32);
 }
 
 .App {
@@ -18,15 +19,20 @@ body {
 .App h1 {
   font-size: 40px;
   margin-bottom: 20px;
+  color: rgb(248, 248, 248);
 }
 
-.App p {
+.top-para {
   font-size: 20px;
   margin-bottom: 40px;
+  color: rgb(248, 248, 248);
 }
 
 .App hr {
+  border: 0;
+  height: 1px;
   margin: 20px 0;
+  background-color: rgb(248, 248, 248);
 }
 
 .counter_title {
@@ -39,12 +45,13 @@ body {
 .counter_title h3 {
   margin-bottom: 20px;
   font-size: x-large;
-  color: rgb(32, 32, 32);
+  color: rgb(248, 248, 248);
 }
 
 .counter_title p {
   font-size: large;
-  color: rgb(32, 32, 32);
+  color: rgb(248, 248, 248);
+  margin-bottom: 20px;
 }
 
 .counter_btn {
@@ -56,17 +63,17 @@ body {
 .counter_btn button {
   border: none;
   border-radius: 5px;
-  background-color: rgb(32, 32, 32);
+  background-color: rgb(54, 54, 54);
   padding: 10px 20px;
   color: white;
   font-size: large;
   margin: 0px 20px;
   cursor: pointer;
-  transition: 0.5 ease-in-out all;
+  transition: 0.5s ease-in-out all;
 }
 
 .counter_btn button:hover {
-  filter: drop-shadow(0px 2px 4px rgba(32, 32, 32, 0.3));
+  filter: drop-shadow(0px 2px 4px rgba(253, 222, 222, 0.2));
 }
 
 .imageContainer {
@@ -77,19 +84,32 @@ body {
 }
 
 .imageContainer h3 {
+  font-size: xx-large;
   margin-bottom: 20px;
+  color: rgb(248, 248, 248);
 }
 
 .top {
   padding-bottom: 60px;
+  margin-top: 80px;
+}
+
+main {
+  min-height: calc(70vh - 120px);
 }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 15px;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1300px;
+  margin: 0 auto 40px auto;
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
 }
 
 .gallery__img {
@@ -101,15 +121,193 @@ body {
 .getImage {
   border: none;
   border-radius: 5px;
-  background-color: rgb(32, 32, 32);
+  background-color: rgb(54, 54, 54);
   padding: 10px 20px;
   color: white;
   font-size: large;
   margin: 30px 20px;
   cursor: pointer;
-  transition: 0.5 ease-in-out all;
+  transition: 0.5s ease-in-out all;
 }
 
 .getImage:hover {
-  filter: drop-shadow(0px 2px 4px rgba(32, 32, 32, 0.3));
+  filter: drop-shadow(0px 5px 10px rgba(54, 54, 54, 0.5));
+}
+
+nav {
+  background-color: rgb(41, 41, 41);
+  padding: 15px 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  filter: drop-shadow(0px 2px 4px rgba(39, 39, 39, 0.5));
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.navbar-brand a {
+  font-size: x-large;
+  color: rgb(253, 253, 253);
+  text-decoration: none;
+}
+
+.navbar-menu {
+  align-items: center;
+}
+
+.navbar-menu a {
+  font-size: medium;
+  color: rgb(253, 253, 253);
+  text-decoration: none;
+  position: relative;
+}
+
+.navbar-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(255, 96, 96);
+  transition: 0.5s ease-in-out all;
+}
+
+.navbar-menu a:hover{
+  color: rgb(255, 173, 173);
+}
+
+.navbar-menu a:hover::after {
+  width: 100%;
+}
+
+.navbar-menu a:first-child {
+  margin-right: 20px;
+}
+
+.navbar-end button {
+  display: block;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(54, 54, 54);
+  padding: 10px 20px;
+  color: white;
+  font-size: large;
+  margin: 0px 20px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out all;
+}
+
+.navbar-end button:hover {
+  /* color:rgb(255, 88, 88);
+  background-color: rgb(253, 212, 212);
+  filter: drop-shadow(0px 2px 4px rgba(255, 96, 96, 0.5)); */
+  filter: drop-shadow(0px 2px 4px rgba(54, 54, 54, 0.5));
+}
+
+
+footer {
+  display: block;
+  padding: 40px 0px;
+  background-color: rgb(41, 41, 41);
+  border-top: 1px solid rgb(39, 39, 39);
+}
+
+.footer-text {
+  font-size: 16px;
+  color: rgb(248, 248, 248);
+  margin-bottom: 0px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: calc(30% - 40px);
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgb(71, 71, 71);
+  background-color: rgb(54, 54, 54);
+}
+
+.control h1 {
+  font-size: xx-large;
+  color: rgb(248, 248, 248);
+  margin-bottom: 40px;
+}
+
+.input {
+  position: relative;
+  margin: 30px 0px;
+}
+
+.input .label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: rgb(248, 248, 248);
+  font-size: 16px;
+  opacity: 0.5;
+  transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input input {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  background-color: rgb(54, 54, 54);
+  color: rgb(248, 248, 248);
+  font-size: 16px;
+  border-bottom: 1px solid rgb(248, 248, 248);
+  transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input input::placeholder {
+  opacity: 0;
+}
+
+.input input:focus {
+  border-bottom: 1px solid rgb(255, 96, 96);
+  outline: none;
+}
+
+.input input:focus ~ .label, .input input:valid ~ .label, .input input:-webkit-autofill ~ .label {
+  outline: none;
+  top: -25px;
+  left: 0px;
+  opacity: 1;
+}
+
+.input input::placeholder ~ .label {
+  font-size: 12px;
+  top: -15px;
+  left: 0px;
+}
+
+.login-btn {
+  margin: 20px 0px;
+  background-color: rgb(255, 96, 96);
+  color: white;
+  font-size: large;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 30px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out all;
+}
+
+.login-btn:hover {
+  filter: drop-shadow(0px 3px 6px rgba(255, 96, 96, 0.3));
 }

@@ -4,13 +4,12 @@ import axios from "axios";
 export const fetchGallery = createAsyncThunk(
 	"gallery/fetchGallery",
 	async () => {
+		const random = Math.floor(Math.random() * 10);
 		const response = await axios.get(
-			"https://picsum.photos/v2/list?page=2&limit=12",
+			`https://picsum.photos/v2/list?page=${random}&limit=36`,
 			{
 				headers: {
-					type: "text/html",
 					Accept: "text/html",
-					"Content-Type": "text/html",
 				},
 			}
 		);
