@@ -2,9 +2,8 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../redux/userReducer";
-import Layout from "./Layout";
 
-const User = () => {
+const Login = () => {
 	const [username, setUsername] = React.useState("");
 	const [password, setPassword] = React.useState("");
 
@@ -22,7 +21,7 @@ const User = () => {
 	};
 
 	return (
-		<Layout>
+		<>
 			<div className="login-form">
 				<div class="control">
 					<h1>Sign In</h1>
@@ -59,8 +58,8 @@ const User = () => {
 					Login
 				</button>
 			</div>
-		</Layout>
+		</>
 	);
 };
 
-export default User;
+export default Login;

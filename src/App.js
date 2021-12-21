@@ -2,31 +2,54 @@ import { Route, Routes } from "react-router-dom";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "./App.css";
 import ProtectedRoute from "./auth/ProtectedRoute";
-import Counter from "./components/Counter";
-import Gallery from "./components/Gallery";
-import User from "./components/User";
+import Login from "./components/Login";
+import UserList from "./pages/UserList";
+import UserDetails from "./pages/UserDetails";
+import ProductList from "./pages/ProductList";
+import ProductDetails from "./pages/ProductDetails";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => {
 	return (
 		<Routes>
+			<Route path="/" element={<Dashboard />} />
+			{/* Users */}
 			<Route
-				path="/"
-				exact
+				path="users"
 				element={
 					<ProtectedRoute>
-						<Counter />
+						<UserList />
 					</ProtectedRoute>
 				}
-			/>
+			>
+				<Route
+					path=":userId"
+					element={
+						<ProtectedRoute>
+							<UserDetails />
+						</ProtectedRoute>
+					}
+				/>
+			</Route>
+			{/* Products */}
 			<Route
-				path="/gallery"
+				path="products"
 				element={
 					<ProtectedRoute>
-						<Gallery />
+						<ProductList />
 					</ProtectedRoute>
 				}
-			/>
-			<Route path="/login" element={<User />} />
+			>
+				<Route
+					path=":productId"
+					element={
+						<ProtectedRoute>
+							<ProductDetails />
+						</ProtectedRoute>
+					}
+				/>
+			</Route>
+			<Route path="/login" element={<Login />} />
 		</Routes>
 	);
 };

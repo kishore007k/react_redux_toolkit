@@ -18,14 +18,21 @@ const Layout = ({ children }) => {
 						<Link to="/">React-Redux</Link>
 					</div>
 					<div className="navbar-menu">
-						<Link to="/">Counter</Link>
-						<Link to="gallery">Gallery</Link>
+						<Link to="/">Dashboard</Link>
+						<Link to="users">Users</Link>
+						<Link to="products">Products</Link>
 					</div>
 					<div className="navbar-end">
 						{token ? (
 							<button onClick={handleLogout}>Logout</button>
 						) : (
-							<Link to="login">Login</Link>
+							<button
+								onClick={() => {
+									navigate("/login");
+								}}
+							>
+								Login
+							</button>
 						)}
 					</div>
 				</div>
