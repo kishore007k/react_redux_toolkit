@@ -314,13 +314,43 @@ footer {
   filter: drop-shadow(0px 3px 6px rgba(255, 96, 96, 0.3));
 }
 
+.product-flex {
+  display: flex;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+}
+
 .product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 10px;
+  max-width: 990px;
+  margin: 0 auto 60px auto;
+  padding: 0px 10px;
+}
+
+.product-list > a {
+  display: inherit;
+  text-decoration: none;
+}
+
+.product-list-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 10px;
   max-width: 1300px;
   margin: 0 auto 60px auto;
   padding: 0px 10px;
+}
+
+.product-list-grid > button {
+  display: contents;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
@@ -425,4 +455,62 @@ footer {
 
 .product-card-rating:hover{
   color: rgb(253, 247, 220);
+}
+
+.github-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: calc(100% - 40px);
+  margin: 0 auto;
+}
+
+.js-calendar-graph-svg {
+  width: fit-content;
+  padding: 10px;
+  background-color: rgb(44, 44, 44);
+  border-radius: 5px;
+  border: 1px solid rgb(124, 124, 124);
+  filter: drop-shadow(0px 2px 4px rgba(17, 17, 17, 0.3));
+}
+
+.ContributionCalendar-day {
+  fill:rgb(124, 124, 124);
+}
+
+.ContributionCalendar-day.active {
+  fill:rgb(255, 96, 96);
+}
+
+text {
+  font-size: 11px;
+  fill: rgb(245, 245, 245);
+  margin: 10px;
+}
+
+.product_details{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 300px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.product_details_fixed{
+  position: fixed;
+  top: 30%;
+  right: 2%;
+  max-width: 550px;
+}
+
+.product_details_title{
+  font-size: large;
+  color: rgb(248, 248, 248);
+  margin: 0px;
+  text-align: center;
 }

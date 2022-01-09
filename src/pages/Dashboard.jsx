@@ -1,25 +1,32 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import { getAllProducts } from "../redux/productReducer";
-import { getAllUsers } from "../redux/userReducer";
 
 const Dashboard = () => {
 	const dispatch = useDispatch();
 	const { products } = useSelector((state) => state.product);
-	const { users } = useSelector((state) => state.user);
 
-	console.log({ products, users });
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		dispatch(getAllProducts());
-		dispatch(getAllUsers());
 	}, [dispatch]);
 
 	return (
-		<div className="product-list">
+		<div className="product-list-grid">
 			{products.map((product) => (
-				<ProductCard key={product.id} product={product} />
+				<button
+					key={product.id}
+					onClick={() =>
+						navigate(`/products/details/${product.title}`, {
+							state: product,
+						})
+					}
+				>
+					<ProductCard product={product} />
+				</button>
 			))}
 		</div>
 	);
